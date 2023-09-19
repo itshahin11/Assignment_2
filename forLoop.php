@@ -1,56 +1,42 @@
 <?php
-function printEvenNumbers($start, $end, $step) {
-    // Ensure the start number is even
-    $start = ($start % 2 == 0) ? $start : $start + 1;
 
-    // Loop through even numbers and print them
+// Function using a for loop
+function printEvenNumbersFor($start, $end, $step) {
     for ($i = $start; $i <= $end; $i += $step) {
-        echo $i . " ";
+        if ($i % 2 == 0) {
+            echo $i . " ";
+        }
     }
 }
 
-// Call the function with the specified arguments
-printEvenNumbers(2, 20, 2);
-
-echo "\n";
-
-
-  
-  // Using while loop
-  function printEvenNumbersWhile($start, $end, $step) {
-    // Ensure the start number is even
-    $start = ($start % 2 == 0) ? $start : $start + 1;
-
-    // Initialize a variable
-    $current = $start;
-
-    // Use a while loop to print even numbers
-    while ($current <= $end) {
-        echo $current . " ";
-        $current += $step;
+// Function using a while loop
+function printEvenNumbersWhile($start, $end, $step) {
+    $i = $start;
+    while ($i <= $end) {
+        if ($i % 2 == 0) {
+            echo $i . " ";
+        }
+        $i += $step;
     }
 }
 
-// Call the function with the specified arguments
+// Function using a do-while loop
+function printEvenNumbersDoWhile($start, $end, $step) {
+    $i = $start;
+    do {
+        if ($i % 2 == 0) {
+            echo $i . " ";
+        }
+        $i += $step;
+    } while ($i <= $end);
+}
+
+// Calling the functions to print even numbers
+echo "Using for loop: ";
+printEvenNumbersFor(2, 20, 2);
+
+echo "\nUsing while loop: ";
 printEvenNumbersWhile(2, 20, 2);
 
-echo "\n";
-
-
-  // Using do-while loop
-  function printEvenNumbersDoWhile($start, $end, $step) {
-    // Ensure the start number is even
-    $start = ($start % 2 == 0) ? $start : $start + 1;
-
-    // Initialize a variable
-    $current = $start;
-
-    // Use a do-while loop to print even numbers
-    do {
-        echo $current . " ";
-        $current += $step;
-    } while ($current <= $end);
-}
-
-// Call the function with the specified arguments
+echo "\nUsing do-while loop: ";
 printEvenNumbersDoWhile(2, 20, 2);
