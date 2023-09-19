@@ -1,17 +1,16 @@
 <?php
+function fibonacci($n) {
+  $a = 0;
+  $b = 1;
 
+  for ($i = 0; $i < $n; $i++) {
+    $c = $a + $b;
+    echo "$c\n";
 
-function printFibonacci($n) {
-    $fibonacci = [0, 1];
-    
-    for ($i = 2; $i < $n; $i++) {
-        $nextFib = $fibonacci[$i - 1] + $fibonacci[$i - 2];
-        $fibonacci[] = $nextFib;
-    }
-    
-    foreach ($fibonacci as $number) {
-        echo $number . " ";
-    }
+    $a = $b;
+    $b = $c;
+  }
 }
 
-printFibonacci(15);
+fibonacci(15);
+?>
